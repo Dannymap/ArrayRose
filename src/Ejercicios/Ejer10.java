@@ -5,41 +5,55 @@ import java.util.Scanner;
 
 public class Ejer10 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        //Crea un array de números de un tamaño pasado por teclado, el array contendrá números
+        //aleatorios entre los números deseados, por último nosindica cual es el mayor de todos y la suma
+        //de todos ellos.
+        int tamanio, num, suma, maximo;
+
+        Scanner sc = new Scanner(System.in);
 
         // Pedir al usuario el tamaño del array
-        System.out.print("Ingresa el tamaño del array: ");
-        int tamaño = scanner.nextInt();
+        System.out.print("Ingrese el tamaño del array: ");
+        tamanio = sc.nextInt();
 
-        // Pedir los límites para los números aleatorios
-        System.out.print("Ingresa el número mínimo: ");
-        int min = scanner.nextInt();
-        System.out.print("Ingresa el número máximo: ");
-        int max = scanner.nextInt();
+        // Crear un array del tamaño especificado por el usuario
+        int[] numeros = new int[tamanio];
 
-        // Crear el array con el tamaño especificado
-        int[] numeros = new int[tamaño];
-        Random rand = new Random();
+        // Pedir al usuario los números para llenar el array
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.print("Ingrese un número entre 0 y 9 para la posición " + i + ": ");
+            num = sc.nextInt();
 
-        // Llenar el array con números aleatorios dentro del rango especificado
-        for (int i = 0; i < tamaño; i++) {
-            numeros[i] = rand.nextInt((max - min) + 1) + min;
+            // Validar que el número esté en el rango permitido
+            while (num < 0 || num > 9) {
+                System.out.print("Número fuera de rango. Ingrese un número entre 0 y 9 para la posición " + i + ": ");
+                num = sc.nextInt();
+            }
+
+            // Almacenar el número en el array
+            numeros[i] = num;
         }
 
-        // Encontrar el número mayor y calcular la suma
-        int maximo = numeros[0];
-        int suma = 0;
-        for (int numero : numeros) {
-            suma += numero;
-            if (numero > maximo) {
-                maximo = numero;
+        // Mostrar los valores del array y calcular la suma
+        suma = 0;
+        maximo = numeros[0];
+        System.out.println("\nValores del array:");
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.println("Posición " + i + ": " + numeros[i]);
+            suma += numeros[i];
+
+            // Encontrar el número máximo
+            if (numeros[i] > maximo) {
+                maximo = numeros[i];
             }
         }
 
-        // Mostrar el número mayor y la suma de todos los números
-        System.out.println("El número mayor es: " + maximo);
-        System.out.println("La suma de los números es: " + suma);
+        // Mostrar el número máximo y la suma de los valores
+        System.out.println("\nEl número mayor es: " + maximo);
+        System.out.println("La suma de los valores es: " + suma);
 
-        scanner.close();
+        sc.close();
+        System.out.println("Fin de Programa...");
+
     }
 }

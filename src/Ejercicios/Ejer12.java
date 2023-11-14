@@ -3,6 +3,10 @@ package Ejercicios;
 import java.util.Scanner;
 public class Ejer12 {
     public static void main(String[] args) {
+        //Crea un array de caracteres que contenga de la ‘A’ a la ‘Z’ (solo las mayúsculas). Después,
+        //ve pidiendo posiciones del array por teclado y si la posición es correcta, se cogerá el carácter
+        //correspondiente y se añadirá a una cadena que se mostrara al final. Se dejará de insertar cuando
+        //se introduzca un -1.
         int posicion;
 
         // Crear un array para las letras de la 'A' a la 'Z'

@@ -2,7 +2,7 @@ package Ejercicios;
 
 public class Ejer15 {
     public static void main(String[] args) {
-        //- Rellena un array bidimensional de 10x10 con los números del 1 al 100 en orden invertido y
+        //Rellena un array bidimensional de 10x10 con los números del 1 al 100 en orden invertido y
         //recorre la matriz mostrando los valores con su posición.
         
         int[] arr = new int[100];

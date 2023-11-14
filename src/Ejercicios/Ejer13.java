@@ -7,14 +7,14 @@ public class Ejer13 {
         //Crea una aplicación que pida un numero por teclado y después comprobaremos si el
         //numero introducido es capicúa utilizando arrays.
         boolean esCapicua = true;
-        int numero;
+        int numero, longitud;
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingresa un número: ");
         numero = scanner.nextInt();
 
-        int longitud = String.valueOf(numero).length(); // Obtener la longitud del número
+        longitud = String.valueOf(numero).length(); // Obtener la longitud del número
         int[] digitos = new int[longitud]; // Crear un array para almacenar los dígitos
 
         // Almacenar los dígitos del número en el array
