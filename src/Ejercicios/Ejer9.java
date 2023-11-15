@@ -1,5 +1,6 @@
 package Ejercicios;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Ejer9 {
@@ -7,7 +8,7 @@ public class Ejer9 {
         // Crea un array de números donde le indicamos por teclado el tamaño del array, rellenaremos
         //el array con números aleatorios entre 0 y 9, al final muestra por pantalla el valor de cada
         //posición y la suma de todos los valores.
-        int tamanioArray, numero;
+        int tamanioArray, suma;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -18,20 +19,14 @@ public class Ejer9 {
         // Crear el array con el tamaño especificado
         int[] numeros = new int[tamanioArray];
 
-        // Rellenar el array con números entre 0 y 9 ingresados por el usuario
-        for (int i = 0; i < numeros.length; i++) {
-            System.out.print("Ingrese un número entre 0 y 9 para la posición " + i + ": ");
-            numero = scanner.nextInt();
-
-            while (numero < 0 || numero > 9) {
-                System.out.print("El número debe estar entre 0 y 9. Inténtelo nuevamente: ");
-                numero = scanner.nextInt();
-            }
-            numeros[i] = numero;
+        // Llenar el array con números aleatorios entre 0 y 9
+        Random random = new Random();
+        for (int i = 0; i < tamanioArray; i++) {
+            numeros[i] = random.nextInt(10); // Números aleatorios entre 0 y 9
         }
 
         // Mostrar los valores del array y calcular la suma
-        int suma = 0;
+        suma = 0;
         System.out.println("Valores del array:");
         for (int i = 0; i < tamanioArray; i++) {
             System.out.println("Posición " + i + ": " + numeros[i]);
